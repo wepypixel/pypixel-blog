@@ -27,7 +27,7 @@ export default function Navbar() {
             src="/pypixelLogo.png"
             className={styles["nav-logo"]}
             width={50}
-            height={50}
+            height={40}
           />
         </Link>
 
