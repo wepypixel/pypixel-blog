@@ -1,0 +1,52 @@
+import DOMPurify from "isomorphic-dompurify";
+import { BsInstagram } from "react-icons/bs";
+import { FiTwitter } from "react-icons/fi";
+import styles from "../styles/about-us.module.css";
+import Head from "next/head";
+import axios from "axios";
+import Link from "next/link";
+
+export default function AboutUs({ aboutUs }) {
+  const sanitizedContent = DOMPurify.sanitize(aboutUs?.content);
+
+  return (
+    <div className={styles["about-us-body"]}>
+      <Head>
+        <title>About PyPixel</title>
+        <meta
+          name="description"
+          content="PyPixel is a technology and design blog featuring articles on AI, ML, web development, UI, UX, and design."
+        />
+      </Head>
+
+      <div className={styles["about-us-heading-container"]}>
+        <h4 className={styles["about-us-heading"]}>About Us</h4>
+        <h1 className={styles["about-us-title"]}>{aboutUs?.title}</h1>
+        <span>
+          Follow us on:{" "}
+          <Link href="https://www.instagram.com/wepypixel" target="_blank">
+            {<BsInstagram className={styles["social-icons-about-us"]} />}
+          </Link>
+          <Link href="https://www.twitter.com/wepypixel" target="_blank">
+            {<FiTwitter className={styles["social-icons-about-us"]} />}
+          </Link>
+        </span>
+      </div>
+      <div
+        dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+        className={styles["about-us-content"]}
+      ></div>
+    </div>
+  );
+}
+
+export async function getServerSideProps() {
+  const response = await axios.get("http://127.0.0.1:8000/api/about-us");
+  const aboutUs = response.data;
+
+  return {
+    props: {
+      aboutUs,
+    },
+  };
+}

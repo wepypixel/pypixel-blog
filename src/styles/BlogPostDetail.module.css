@@ -1,0 +1,128 @@
+.blog-post-detail-screen-body{
+    min-height: 100vh;
+}
+
+.blog-post-detail-main {
+  width: 65%;
+}
+
+.blog-post-detail-category {
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: 2px solid #101010;
+  display: inline;
+  cursor: default;
+  font-weight: 500;
+}
+
+.blog-post-detail-title {
+  font-size: 44px;
+  margin-block-end: 1rem;
+}
+
+.blog-post-detail-upper-body {
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-post-detail-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  margin: 20px 0;
+}
+
+.blog-post-content{
+    font-size: 18px;
+}
+
+.blog-post-detail-published-date {
+  color: #828282;
+  font-weight: 500;
+  margin-block-start: 0;
+  display: flex;
+  align-items: center;
+}
+
+.clock-icon {
+  margin-right: 5px;
+}
+
+.blog-post-detail-meta-description {
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.blog-post-detail-screen-body aside {
+  width: 25%;
+}
+
+.blog-post-detail-screen-body aside h1 {
+  font-size: 30px;
+}
+
+.related-post-div {
+  margin-bottom: 40px;
+}
+
+.related-posts-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.related-post-date {
+  font-weight: 500;
+  margin-block-end: 0.2rem;
+  color: #606060;
+}
+
+.related-post-title {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 22px;
+}
+
+.popular-posts-heading{
+    font-size: 32px;
+    /* margin-left: 25px; */
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .blog-post-detail-screen-body aside{
+    display: none;
+  }
+
+  .blog-post-detail-main {
+    width: 100%;
+  }
+  
+  .blog-post-detail-category {
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid #303030;
+    display: inline;
+    cursor: default;
+    font-weight: 500;
+  }
+  
+  .blog-post-detail-title {
+    font-size: 32px;
+    margin-block-end: 1rem;
+  }
+  
+  .blog-post-detail-upper-body {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .blog-post-detail-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin: 20px 0;
+  }
+}

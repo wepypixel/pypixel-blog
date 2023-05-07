@@ -1,0 +1,255 @@
+.nav {
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 40px;
+  padding-top: 20px;
+}
+
+
+.nav-logo{
+  width: 45px;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+}
+
+.navItems a{
+z-index: 999;
+}
+
+.nav-list-ul {
+  list-style: none;
+}
+
+.nav li {
+  margin-left: 1.5rem;
+  font-size: 18px;
+}
+
+.nav li a:hover {
+  opacity: 0.7;
+}
+
+.nav a {
+  color: #000;
+  text-decoration: none;
+}
+
+.searchDivNav {
+  display: flex;
+  width: 350px;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.searchBarNav {
+  border: 1px solid #202020;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 40px;
+  outline: 1px solid transparent;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.searchBarNav:focus {
+  border: 1px solid #1a58a4;
+  box-shadow: -1px 11px 35px -12px rgba(211, 211, 211, 0.75);
+  -webkit-box-shadow: -1px 11px 35px -12px rgba(211, 211, 211, 0.75);
+  -moz-box-shadow: -1px 11px 35px -12px rgba(211, 211, 211, 0.75);
+}
+
+.searchIconNav {
+  font-size: 20px;
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.searchDivNav button {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+.activeLink {
+  font-weight: 700 !important;
+  border-bottom: 3px solid rgb(131, 166, 231);
+  padding-bottom: 5px;
+}
+
+.toggle-icons {
+  display: none;
+}
+
+.mobile-form{
+  display: none;
+}
+
+.nav-toggle-menu{
+  display: none;
+}
+
+.li-div-mobile{
+  display: flex;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .nav {
+    background-color: transparent;
+    height: 70px;
+    padding: 0 20px;
+    padding-top: 20px;
+    z-index: 999;
+  }
+
+  .navItems{
+    align-items: baseline;
+  }
+
+  .logo {
+    font-size: 28px;
+    z-index: 999;
+  }
+
+  .nav-list-ul {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .nav-toggle-menu{
+    display: block;
+    cursor: pointer;
+  }
+
+  .li-div-mobile{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+
+  .toggle-icons {
+    display: block;
+    display: flex;
+    width: 20vw;
+    justify-content: space-between;
+  }
+
+  .mobile-form{
+    display: block;
+  }
+
+  .nav-toggle-menu,
+  .nav-toggle-search {
+    width: 25px;
+    height: 25px;
+    z-index: 999;
+  }
+  .searchDivNav {
+    display: none;
+  }
+
+  .searchDivNavMobile{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+  }
+  
+  .searchBarNavMobile {
+    border: 1px solid #202020;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 40px;
+    outline: 1px solid transparent;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+  
+  .searchBarNavMobile:focus {
+    border: 1px solid #1a58a4;
+    box-shadow: -1px 11px 35px -12px rgba(211, 211, 211, 0.75);
+    -webkit-box-shadow: -1px 11px 35px -12px rgba(211, 211, 211, 0.75);
+    -moz-box-shadow: -1px 11px 35px -12px rgba(211, 211, 211, 0.75);
+  }
+  
+  .searchIconNavMobile {
+    font-size: 20px;
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    cursor: pointer;
+  }
+  
+  .searchDivNavMobile button {
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+  
+
+  .nav-list-ul-active {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    list-style: none;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    padding: 5rem 0;
+    z-index: 998;
+    animation-name: slideFromRight;
+    animation-duration: 0.8s;
+    animation-delay: calc(var(--index) * 0.1s);
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  .nav-list-ul-active .li-div-mobile{
+    text-align: right;
+    padding: 0 20px;
+  }
+
+  .nav-list-ul-active a{
+    font-weight: 500;
+    font-size: 30px;
+    color: #202020;
+    
+  }
+
+  .nav-list-ul-active a:active{
+    border-bottom: 3px solid rgb(131, 166, 231);
+    padding-bottom: 1px;
+  }
+
+  @keyframes slideFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
