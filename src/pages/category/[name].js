@@ -78,7 +78,7 @@ export default function Category({ blogPosts, name, currentPage, totalPages, des
               className={styles["blog-post-hero-link"]}
             >
               <Image
-                src={"http://127.0.0.1:8000" + post.cover_image}
+                src={post.cover_image}
                 className={styles["post-grid-item-img"]}
                 alt={post.title}
                 width={500}

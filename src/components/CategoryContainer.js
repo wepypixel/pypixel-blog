@@ -69,7 +69,7 @@ export default function CategoryContainer({ categories }) {
           >
             <div className={styles["category-card"]}>
               <Image
-                src={"http://127.0.0.1:8000" + category.category_image}
+                src={category.category_image}
                 className={styles["category-image"]}
                 alt={category.name}
                 width={500}

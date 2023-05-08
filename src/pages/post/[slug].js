@@ -48,7 +48,7 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
             {blogPost.meta_description}
           </p>
           <Image
-            src={"http://127.0.0.1:8000" + blogPost.cover_image}
+            src={blogPost.cover_image}
             className={styles["blog-post-detail-img"]}
             alt={blogPost.title}
             width={500}
@@ -72,7 +72,7 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
                     className={gridStyles["blog-post-hero-link"]}
                   >
                     <Image
-                      src={"http://127.0.0.1:8000" + post.cover_image}
+                      src={post.cover_image}
                       className={styles["related-posts-img"]}
                       alt={post.title}
                       width={500}
@@ -112,7 +112,7 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
                     className={gridStyles["blog-post-hero-link"]}
                   >
                     <Image
-                      src={"http://127.0.0.1:8000" + post.cover_image}
+                      src={post.cover_image}
                       className={gridStyles["post-grid-item-img"]}
                       alt={post.title}
                       width={500}

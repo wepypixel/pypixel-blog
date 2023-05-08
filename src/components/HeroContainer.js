@@ -26,7 +26,7 @@ export default function HeroContainer({ posts }) {
             className={styles["blog-post-hero-link"]}
           >
             <Image
-              src={"http://127.0.0.1:8000" + post.cover_image}
+              src={post.cover_image}
               className={styles["hero-container-post-cover-image"]}
               alt={post.title}
               width={500}
@@ -49,7 +49,7 @@ export default function HeroContainer({ posts }) {
             className={styles["blog-post-hero-link-mobile"]}
           >
             <Image
-              src={"http://127.0.0.1:8000" + post.cover_image}
+              src={post.cover_image}
               className={styles["hero-container-post-cover-image-mobile"]}
               alt={post.title}
               width={500}
@@ -74,7 +74,7 @@ export default function HeroContainer({ posts }) {
               className={styles["blog-post-hero-link"]}
             >
               <Image
-                src={"http://127.0.0.1:8000" + post.cover_image}
+                src={post.cover_image}
                 className={styles["hero-container-post-cover-image"]}
                 alt={post.title}
                 width={500}
