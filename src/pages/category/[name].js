@@ -5,9 +5,15 @@ import Link from "next/link";
 import Head from "next/head";
 import { RxDotFilled } from "react-icons/rx";
 import styles from "../../styles/CategoryPosts.module.css";
-import Image from 'next/image'
+import Image from "next/image";
 
-export default function Category({ blogPosts, name, currentPage, totalPages, description }) {
+export default function Category({
+  blogPosts,
+  name,
+  currentPage,
+  totalPages,
+  description,
+}) {
   const [currentPageState, setCurrentPageState] = useState(currentPage);
   const [posts, setPosts] = useState(blogPosts);
 
@@ -15,11 +21,12 @@ export default function Category({ blogPosts, name, currentPage, totalPages, des
     setCurrentPageState(pageNumber);
   };
 
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `/api/category/${name}?page=${currentPageState}`
+          `https://pypixel.com/api/category/${name}?page=${currentPageState}`
         );
         setPosts(response.data.results);
       } catch (error) {
@@ -34,7 +41,7 @@ export default function Category({ blogPosts, name, currentPage, totalPages, des
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/category/${name}`
+          `https://pypixel.com/api/category/${name}`
         );
         setPosts(response.data.results);
       } catch (error) {
@@ -95,7 +102,7 @@ export default function Category({ blogPosts, name, currentPage, totalPages, des
                 </p>
               </div>
               <h2 className={styles["grid-card-post-title"]}>
-              {truncateString(post.title, 70)}
+                {truncateString(post.title, 70)}
               </h2>
             </Link>
           </div>
@@ -126,10 +133,12 @@ export async function getServerSideProps(context) {
   const name = context.params.name;
   const currentPage = 1;
   const res = await axios.get(
-    `/api/category/${name}?page=${currentPage}`
+    `https://pypixel.com/api/category/${name}?page=${currentPage}`
   );
   const blogPosts = res.data.results;
-  const description = res.data.results[0] ? res.data.results[0].category.description : '';
+  const description = res.data.results[0]
+    ? res.data.results[0].category.description
+    : "";
   const totalPages = res.data.total_pages;
 
   return {
@@ -138,7 +147,7 @@ export async function getServerSideProps(context) {
       name,
       currentPage,
       totalPages,
-      description
+      description,
     },
   };
 }

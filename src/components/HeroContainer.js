@@ -29,8 +29,9 @@ export default function HeroContainer({ posts }) {
               src={post.cover_image}
               className={styles["hero-container-post-cover-image"]}
               alt={post.title}
-              width={500}
-              height={500}
+              width={1000}
+              height={1000}
+              priority
             ></Image>
             <h2 className={styles["hero-container-post-title"]}>
               {post.title}
@@ -54,6 +55,7 @@ export default function HeroContainer({ posts }) {
               alt={post.title}
               width={500}
               height={500}
+              priority
             ></Image>
             <h2 className={styles["hero-container-post-title-mobile"]}>
               
@@ -79,6 +81,7 @@ export default function HeroContainer({ posts }) {
                 alt={post.title}
                 width={500}
                 height={500}
+                priority
               ></Image>
               <h2 className={styles["hero-container-post-title"]}>
                 {post.title}

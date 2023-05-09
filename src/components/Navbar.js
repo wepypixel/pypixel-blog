@@ -28,6 +28,7 @@ export default function Navbar() {
             className={styles["nav-logo"]}
             width={50}
             height={40}
+            alt="PyPixel-Logo"
           />
         </Link>
 

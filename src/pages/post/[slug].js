@@ -51,8 +51,9 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
             src={blogPost.cover_image}
             className={styles["blog-post-detail-img"]}
             alt={blogPost.title}
-            width={500}
-            height={500}
+            width={1000}
+            height={1000}
+            priority
           />
 
           <div
@@ -102,7 +103,7 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
         <h1 className={styles["popular-posts-heading"]}>
           Popular Posts in {blogPost.category.name}
         </h1>
-        <div class={gridStyles["posts-grid-container"]}>
+        <div className={gridStyles["posts-grid-container"]}>
           {popularPosts.slice(0,12).map((post) => {
             if (post.id != blogPost.id) {
               return (
@@ -145,15 +146,15 @@ export async function getServerSideProps(context) {
   const slug = context.params.slug;
 
   const blogPostResponse = await axios.get(
-    `/api/post/${slug}`
+    `https://pypixel.com/api/post/${slug}`
   );
   const blogPost = blogPostResponse.data;
   const relatedPostsResponse = await axios.get(
-    `/api/category/${blogPostResponse.data.category.name}`
+    `https://pypixel.com/api/category/${blogPostResponse.data.category.name}`
   );
   const relatedPosts = relatedPostsResponse.data.results;
   const popularPostsResponse = await axios.get(
-    `/api/popular/${blogPostResponse.data.category.name}`
+    `https://pypixel.com/api/popular/${blogPostResponse.data.category.name}`
   );
   const popularPosts = popularPostsResponse.data;
 
