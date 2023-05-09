@@ -145,15 +145,15 @@ export async function getServerSideProps(context) {
   const slug = context.params.slug;
 
   const blogPostResponse = await axios.get(
-    `http://127.0.0.1:8000/api/post/${slug}`
+    `/api/post/${slug}`
   );
   const blogPost = blogPostResponse.data;
   const relatedPostsResponse = await axios.get(
-    `http://127.0.0.1:8000/api/category/${blogPostResponse.data.category.name}`
+    `/api/category/${blogPostResponse.data.category.name}`
   );
   const relatedPosts = relatedPostsResponse.data.results;
   const popularPostsResponse = await axios.get(
-    `http://127.0.0.1:8000/api/popular/${blogPostResponse.data.category.name}`
+    `/api/popular/${blogPostResponse.data.category.name}`
   );
   const popularPosts = popularPostsResponse.data;
 

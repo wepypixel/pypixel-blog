@@ -37,15 +37,15 @@ export default function Homepage({
 export async function getServerSideProps() {
   const page = 1;
   const response = await axios.get(
-    `http://127.0.0.1:8000/api/posts?page=${page}`
+    `/api/posts?page=${page}`
   );
   const posts = response.data.results;
   const totalPages = response.data.total_pages;
 
-  const res = await axios.get("http://127.0.0.1:8000/api/recentposts");
+  const res = await axios.get("/api/recentposts");
   const recentPosts = res.data;
 
-  const categoryRes = await axios.get("http://127.0.0.1:8000/api/categories");
+  const categoryRes = await axios.get("/api/categories");
   const categories = categoryRes.data;
   return {
     props: {

@@ -19,7 +19,7 @@ export default function Category({ blogPosts, name, currentPage, totalPages, des
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/category/${name}?page=${currentPageState}`
+          `/api/category/${name}?page=${currentPageState}`
         );
         setPosts(response.data.results);
       } catch (error) {
@@ -126,7 +126,7 @@ export async function getServerSideProps(context) {
   const name = context.params.name;
   const currentPage = 1;
   const res = await axios.get(
-    `http://127.0.0.1:8000/api/category/${name}?page=${currentPage}`
+    `/api/category/${name}?page=${currentPage}`
   );
   const blogPosts = res.data.results;
   const description = res.data.results[0] ? res.data.results[0].category.description : '';

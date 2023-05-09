@@ -41,7 +41,7 @@ export default function AboutUs({ aboutUs }) {
 }
 
 export async function getServerSideProps() {
-  const response = await axios.get("http://127.0.0.1:8000/api/about-us");
+  const response = await axios.get("/api/about-us");
   const aboutUs = response.data;
 
   return {
