@@ -1,5 +1,6 @@
 import axios from "axios";
 import { format } from "date-fns";
+import { useEffect } from "react";
 import { AiFillClockCircle } from "react-icons/ai";
 import DOMPurify from "isomorphic-dompurify";
 import Link from "next/link";
@@ -7,11 +8,14 @@ import Head from "next/head";
 import { RxDotFilled } from "react-icons/rx";
 import styles from "../../styles/BlogPostDetail.module.css";
 import gridStyles from "../../styles/BlogPostList.module.css";
-import Image from 'next/image'
+import Image from "next/image";
+import * as ga from "../../lib/ga";
+import { useRouter } from 'next/router'
 
 export default function Post({ blogPost, relatedPosts, popularPosts }) {
   const description = blogPost ? blogPost.meta_description : "";
   const sanitizedContent = DOMPurify.sanitize(blogPost.content);
+  const router = useRouter()
 
   function truncateString(str, num) {
     if (str.length <= num) {
@@ -25,6 +29,21 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
     return truncated.slice(0, lastSpace) + "...";
   }
 
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url);
+    };
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <div className={styles["blog-post-detail-screen-body"]}>
       <Head>
@@ -32,6 +51,7 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
         <meta name="description" content={description} />
       </Head>
       <div className={styles["blog-post-detail-upper-body"]}>
+      {console.log(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS)}
         <main className={styles["blog-post-detail-main"]}>
           <p className={styles["blog-post-detail-category"]}>
             {blogPost.category.name}
@@ -104,7 +124,7 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
           Popular Posts in {blogPost.category.name}
         </h1>
         <div className={gridStyles["posts-grid-container"]}>
-          {popularPosts.slice(0,12).map((post) => {
+          {popularPosts.slice(0, 12).map((post) => {
             if (post.id != blogPost.id) {
               return (
                 <div key={post.id} className={gridStyles["posts-grid-item"]}>

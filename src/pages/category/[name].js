@@ -74,7 +74,7 @@ export default function Category({
       </Head>
 
       <h1 className={styles["category-posts-heading"]}>
-        See what&apos;s trending in
+        See what&apos;s trending in&nbsp;
         {name ? name.charAt(0).toUpperCase() + name.slice(1) : ""}
       </h1>
       <div className={styles["posts-grid-container"]}>

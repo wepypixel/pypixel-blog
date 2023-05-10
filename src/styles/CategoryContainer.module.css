@@ -33,6 +33,7 @@
   height: 350px;
   border-radius: 20px;
   opacity: 0.8;
+  object-fit: cover;
 }
 
 .category-card:hover .category-image {
