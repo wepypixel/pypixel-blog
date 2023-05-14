@@ -10,7 +10,7 @@ export default function ContactUs() {
       </Head>
       <div className={styles["contact-us-heading-container"]}>
         <h4 className={styles["contact-us-heading"]}>Privacy Policy</h4>
-        <h1 className={styles["contact-us-title"]}>PyPixel's Privacy Policy</h1>
+        <h1 className={styles["contact-us-title"]}>PyPixel&apos;s Privacy Policy</h1>
       </div>
       <div className={styles["contact-us-content"]}>
         <p>
