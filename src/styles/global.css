@@ -9,10 +9,13 @@ body {
 
 code{
   font-family: 'Courier New', Courier, monospace;
-  background-color: #eee;
+  background-color: #202020;
   border-radius: 3px;
+  color: #fff;
+  display: block;
   font-family: courier, monospace;
-  padding: 0 3px;
+  padding: 10px 15px;
+  font-size: 16px;
   
 }
 
