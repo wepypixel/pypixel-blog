@@ -51,7 +51,6 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
         <meta name="description" content={description} />
       </Head>
       <div className={styles["blog-post-detail-upper-body"]}>
-      {console.log(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS)}
         <main className={styles["blog-post-detail-main"]}>
           <p className={styles["blog-post-detail-category"]}>
             {blogPost.category.name}
@@ -64,9 +63,6 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
               "dd MMMM yyyy"
             )}
           </h4>
-          <p className={styles["blog-post-detail-meta-description"]}>
-            {blogPost.meta_description}
-          </p>
           <Image
             src={blogPost.cover_image}
             className={styles["blog-post-detail-img"]}
