@@ -7,6 +7,15 @@ body {
   margin: 0;
 }
 
+code{
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #eee;
+  border-radius: 3px;
+  font-family: courier, monospace;
+  padding: 0 3px;
+  
+}
+
 a {
   text-decoration: none;
   color: #232323;

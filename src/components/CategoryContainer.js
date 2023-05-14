@@ -111,10 +111,11 @@ export default function CategoryContainer({ categories }) {
                   <p className={styles["card-p"]}>{category.description}</p>
                   <BsArrowUpRight className={styles["arrow-icon-card"]} />
                 </div>
+                <p className={styles['category-counter']}>&#40;{currentCategory + 1}/2&#41;</p>
               </div>
             </Link>
           ))}
       </div>
     </div>
-  );
+  );  
 }

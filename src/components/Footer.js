@@ -35,6 +35,9 @@ export default function Footer() {
           <Link href="/contact-us">
             <p className={styles["footer-site-links"]}>Contact Us</p>
           </Link>
+          <Link href="/privacy-policy">
+          <p className={styles["footer-site-links"]}>Privacy Policy</p>
+          </Link>
         </div>
         <div className={styles["footer-div3"]}>
           <h3>Social Links</h3>
