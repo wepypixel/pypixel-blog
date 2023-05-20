@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
         <meta charset="utf-8" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,12 +13,17 @@ export default function Document() {
         />
         <link rel="icon" href="/favicon.ico" />
         <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045600134360394"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -26,11 +31,10 @@ export default function Document() {
               page_path: window.location.pathname,
             });
           `,
-            }}
-          />
+          }}
+        />
       </Head>
       <body>
-        
         <Main />
         <NextScript />
       </body>

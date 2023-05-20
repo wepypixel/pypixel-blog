@@ -10,12 +10,12 @@ import styles from "../../styles/BlogPostDetail.module.css";
 import gridStyles from "../../styles/BlogPostList.module.css";
 import Image from "next/image";
 import * as ga from "../../lib/ga";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 export default function Post({ blogPost, relatedPosts, popularPosts }) {
   const description = blogPost ? blogPost.meta_description : "";
   const sanitizedContent = DOMPurify.sanitize(blogPost.content);
-  const router = useRouter()
+  const router = useRouter();
 
   function truncateString(str, num) {
     if (str.length <= num) {
@@ -49,6 +49,16 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
       <Head>
         <title>{blogPost.title}</title>
         <meta name="description" content={description} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={blogPost.title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={blogPost.cover_image} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={blogPost.title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={blogPost.cover_image} />
       </Head>
       <div className={styles["blog-post-detail-upper-body"]}>
         <main className={styles["blog-post-detail-main"]}>
@@ -79,7 +89,7 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
         </main>
 
         <aside>
-          <h1>Related Posts</h1>
+          <h2>Related Posts</h2>
           {relatedPosts.slice(0, 5).map((post) => {
             if (post.id != blogPost.id) {
               return (
@@ -116,9 +126,9 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
       </div>
 
       <section className={gridStyles["posts-list-container"]}>
-        <h1 className={styles["popular-posts-heading"]}>
+        <h2 className={styles["popular-posts-heading"]}>
           Popular Posts in {blogPost.category.name}
-        </h1>
+        </h2>
         <div className={gridStyles["posts-grid-container"]}>
           {popularPosts.slice(0, 12).map((post) => {
             if (post.id != blogPost.id) {

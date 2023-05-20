@@ -73,10 +73,10 @@ export default function Category({
         <meta name="description" content={`${description}`} />
       </Head>
 
-      <h1 className={styles["category-posts-heading"]}>
+      <h2 className={styles["category-posts-heading"]}>
         See what&apos;s trending in&nbsp;
         {name ? name.charAt(0).toUpperCase() + name.slice(1) : ""}
-      </h1>
+      </h2>
       <div className={styles["posts-grid-container"]}>
         {posts.map((post) => (
           <div key={post.id} className={styles["posts-grid-item"]}>

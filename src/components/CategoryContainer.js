@@ -59,7 +59,7 @@ export default function CategoryContainer({ categories }) {
 
   return (
     <div className={styles["category-hero"]}>
-      <h1 className={styles["category-hero-heading"]}>Explore Categories</h1>
+      <h2 className={styles["category-hero-heading"]}>Explore Categories</h2>
       <div className={styles["category-card-container"]}>
         {categories.map((category) => (
           <Link
@@ -75,7 +75,7 @@ export default function CategoryContainer({ categories }) {
                 width={500}
                 height={500}
               /> 
-              <h1 className={styles["category-card-h1"]}>{category.name}</h1>
+              <h2 className={styles["category-card-h1"]}>{category.name}</h2>
               <div className={styles["category-card-p-div"]}>
                 <p className={styles["card-p"]}>{category.description}</p>
                 <BsArrowUpRight className={styles["arrow-icon-card"]} />
@@ -106,7 +106,7 @@ export default function CategoryContainer({ categories }) {
                   width={500}
                   height={500}
                 />
-                <h1 className={styles["category-card-h1"]}>{category.name}</h1>
+                <h2 className={styles["category-card-h1"]}>{category.name}</h2>
                 <div className={styles["category-card-p-div"]}>
                   <p className={styles["card-p"]}>{category.description}</p>
                   <BsArrowUpRight className={styles["arrow-icon-card"]} />
