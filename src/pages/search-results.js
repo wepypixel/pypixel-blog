@@ -68,7 +68,7 @@ export default function SearchResults({ blogPosts, query, currentPage, totalPage
               <div className={styles["grid-post-date-div"]}>
                 <p className={styles["post-date"]}>
                   {format(
-                    new Date(post.updated_on.substring(0, 10)),
+                    new Date(post.created_on.substring(0, 10)),
                     "dd MMMM yyyy"
                   )}
                 </p>

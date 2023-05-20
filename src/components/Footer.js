@@ -43,6 +43,7 @@ export default function Footer() {
           <h3>Social Links</h3>
           <Link href="https://www.instagram.com/wepypixel" target="_blank"><p className={styles["footer-social-links"]}>Instagram</p></Link>
           <Link href="https://www.twitter.com/wepypixel" target="_blank"><p className={styles["footer-social-links"]}>Twitter</p></Link>
+          <Link href="https://medium.com/@wepypixel" target="_blank"><p className={styles["footer-social-links"]}>Medium</p></Link>
           <Link href="mailto:wepypixel@gmail.com" target="_blank"><p className={styles["footer-social-links"]}>Email</p></Link>
         </div>
       </div>

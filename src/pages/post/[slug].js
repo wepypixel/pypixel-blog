@@ -59,7 +59,7 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
           <h4 className={styles["blog-post-detail-published-date"]}>
             <AiFillClockCircle className={styles["clock-icon"]} /> Published on{" "}
             {format(
-              new Date(blogPost.updated_on.substring(0, 10)),
+              new Date(blogPost.created_on.substring(0, 10)),
               "dd MMMM yyyy"
             )}
           </h4>
@@ -99,7 +99,7 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
                       <RxDotFilled className={gridStyles["dot-icon"]} />
                       <p className={gridStyles["post-date"]}>
                         {format(
-                          new Date(post.updated_on.substring(0, 10)),
+                          new Date(post.created_on.substring(0, 10)),
                           "dd MMMM yyyy"
                         )}
                       </p>
@@ -139,7 +139,7 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
                       <RxDotFilled className={gridStyles["dot-icon"]} />
                       <p className={gridStyles["post-date"]}>
                         {format(
-                          new Date(post.updated_on.substring(0, 10)),
+                          new Date(post.created_on.substring(0, 10)),
                           "dd MMMM yyyy"
                         )}
                       </p>

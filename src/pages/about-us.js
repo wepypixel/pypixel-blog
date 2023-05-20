@@ -15,7 +15,7 @@ export default function AboutUs({ aboutUs }) {
         <title>About PyPixel</title>
         <meta
           name="description"
-          content="PyPixel is a technology and design blog featuring articles on AI, ML, web development, UI, UX, and design."
+          content="Pypixel, the intersection of technology and design. Our blog is dedicated to exploring the latest trends, and concepts in both technology and design."
         />
       </Head>
 

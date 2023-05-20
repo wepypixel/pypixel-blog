@@ -96,7 +96,7 @@ export default function Category({
                 <RxDotFilled className={styles["dot-icon"]} />
                 <p className={styles["post-date"]}>
                   {format(
-                    new Date(post.updated_on.substring(0, 10)),
+                    new Date(post.created_on.substring(0, 10)),
                     "dd MMMM yyyy"
                   )}
                 </p>
