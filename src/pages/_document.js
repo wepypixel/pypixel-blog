@@ -11,7 +11,6 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/favicon.ico" />
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}

@@ -18,8 +18,9 @@ export default function BlogPostList({ initialPosts, currentPage, totalPages }) 
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://pypixel.com/api/posts?page=${currentPageState}`
+          `/api/posts?page=${currentPageState}`
         );
+        console.log("Hitting")
         setPosts(response.data.results);
       } catch (error) {
         console.log(error);
@@ -45,7 +46,7 @@ export default function BlogPostList({ initialPosts, currentPage, totalPages }) 
   return (
     <div className={styles["posts-list-container"]}>
       <div className={styles["posts-grid-container"]}>
-        {posts.slice(3).map((post) => (
+        {posts.map((post) => (
           <div key={post.id} className={styles["posts-grid-item"]}>
             <Link href={`/post/${post.slug}`} className={styles["blog-post-hero-link"]}>
               <Image

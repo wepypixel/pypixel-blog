@@ -172,15 +172,15 @@ export async function getServerSideProps(context) {
   const slug = context.params.slug;
 
   const blogPostResponse = await axios.get(
-    `https://pypixel.com/api/post/${slug}`
+    `/api/post/${slug}`
   );
   const blogPost = blogPostResponse.data;
   const relatedPostsResponse = await axios.get(
-    `https://pypixel.com/api/category/${blogPostResponse.data.category.name}`
+    `/api/category/${blogPostResponse.data.category.name}`
   );
   const relatedPosts = relatedPostsResponse.data.results;
   const popularPostsResponse = await axios.get(
-    `https://pypixel.com/api/popular/${blogPostResponse.data.category.name}`
+    `/api/popular/${blogPostResponse.data.category.name}`
   );
   const popularPosts = popularPostsResponse.data;
 
