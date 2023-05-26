@@ -21,7 +21,7 @@ export default function Homepage({
         />
         <meta property="og:title" content="PyPixel" />
         <meta property="og:description" content="PyPixel is a technology and design blog featuring articles on AI, ML, web development, UI, UX, and design." />
-        <meta property="og:image" content="/favicon.ico" />
+        <meta property="og:image" content="favicon.ico" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </Head>
