@@ -42,15 +42,15 @@ export default function Homepage({
 export async function getServerSideProps() {
   const page = 1;
   const response = await axios.get(
-    `/api/posts?page=${page}`
+    `https://pypixel.com/api/posts?page=${page}`
   );
   const posts = response.data.results;
   const totalPages = response.data.total_pages;
 
-  const res = await axios.get("/api/recentposts");
+  const res = await axios.get("https://pypixel.com/api/recentposts");
   const recentPosts = res.data;
 
-  const categoryRes = await axios.get("/api/categories");
+  const categoryRes = await axios.get("https://pypixel.com/api/categories");
   const categories = categoryRes.data;
   return {
     props: {

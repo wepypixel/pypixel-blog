@@ -26,7 +26,7 @@ export default function Category({
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `/api/category/${name}?page=${currentPageState}`
+          `https://pypixel.com/api/category/${name}?page=${currentPageState}`
         );
         setPosts(response.data.results);
       } catch (error) {
@@ -41,7 +41,7 @@ export default function Category({
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `/api/category/${name}`
+          `https://pypixel.com/api/category/${name}`
         );
         setPosts(response.data.results);
       } catch (error) {
@@ -133,7 +133,7 @@ export async function getServerSideProps(context) {
   const name = context.params.name;
   const currentPage = 1;
   const res = await axios.get(
-    `/api/category/${name}?page=${currentPage}`
+    `https://pypixel.com/api/category/${name}?page=${currentPage}`
   );
   const blogPosts = res.data.results;
   const description = res.data.results[0]

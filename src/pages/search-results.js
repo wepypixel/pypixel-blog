@@ -16,7 +16,7 @@ export default function SearchResults({ blogPosts, query, currentPage, totalPage
     
     if (query) {
       axios
-        .get(`/api/blog-posts/search/?search=${query}&page=${currentPageState}`)
+        .get(`https://pypixel.com/api/blog-posts/search/?search=${query}&page=${currentPageState}`)
         .then((response) => {
           setPosts(response.data.results);
         })
@@ -104,7 +104,7 @@ export default function SearchResults({ blogPosts, query, currentPage, totalPage
 export async function getServerSideProps(context) {
   const query = context.query.search
   const currentPage = 1
-  const res = await axios.get(`/api/blog-posts/search/?search=${query}`);
+  const res = await axios.get(`https://pypixel.com/api/blog-posts/search/?search=${query}`);
   const blogPosts = res.data.results;
   const totalPages = res.data.total_pages;
   const count = res.data.count;
