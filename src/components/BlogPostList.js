@@ -53,8 +53,8 @@ export default function BlogPostList({ initialPosts, currentPage, totalPages }) 
                 src={post.cover_image}
                 className={styles["post-grid-item-img"]}
                 alt={post.title}
-                width={500}
-                height={500}
+                width={350}
+                height={350}
               />
               <div className={styles["grid-post-date-div"]}>
                 <RxDotFilled className={styles["dot-icon"]} />

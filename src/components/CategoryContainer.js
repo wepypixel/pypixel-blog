@@ -47,12 +47,12 @@ export default function CategoryContainer({ categories }) {
 
   useEffect(() => {
     const node = touchRef.current;
-    node.addEventListener("touchstart", handleTouchStart);
-    node.addEventListener("touchmove", handleTouchMove);
+    node.addEventListener("touchstart", handleTouchStart, { passive: true });
+    node.addEventListener("touchmove", handleTouchMove, { passive: true });
 
     return () => {
-      node.removeEventListener("touchstart", handleTouchStart);
-      node.removeEventListener("touchmove", handleTouchMove);
+      node.removeEventListener("touchstart", handleTouchStart, { passive: true });
+      node.removeEventListener("touchmove", handleTouchMove, { passive: true });
     };
   }, [handleTouchStart, handleTouchMove]);
 
@@ -72,8 +72,8 @@ export default function CategoryContainer({ categories }) {
                 src={category.category_image}
                 className={styles["category-image"]}
                 alt={category.name}
-                width={500}
-                height={500}
+                width={400}
+                height={350}
               /> 
               <h2 className={styles["category-card-h1"]}>{category.name}</h2>
               <div className={styles["category-card-p-div"]}>
@@ -103,8 +103,8 @@ export default function CategoryContainer({ categories }) {
                   src={category.category_image}
                   className={styles["category-image"]}
                   alt={category.name}
-                  width={500}
-                  height={500}
+                  width={200}
+                  height={200}
                 />
                 <h2 className={styles["category-card-h1"]}>{category.name}</h2>
                 <div className={styles["category-card-p-div"]}>

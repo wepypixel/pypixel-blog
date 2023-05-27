@@ -77,8 +77,8 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
             src={blogPost.cover_image}
             className={styles["blog-post-detail-img"]}
             alt={blogPost.title}
-            width={1000}
-            height={1000}
+            width={700}
+            height={400}
             priority
           />
 
@@ -102,8 +102,8 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
                       src={post.cover_image}
                       className={styles["related-posts-img"]}
                       alt={post.title}
-                      width={500}
-                      height={500}
+                      width={350}
+                      height={350}
                     />
                     <div className={gridStyles["grid-post-date-div"]}>
                       <RxDotFilled className={gridStyles["dot-icon"]} />
@@ -142,8 +142,8 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
                       src={post.cover_image}
                       className={gridStyles["post-grid-item-img"]}
                       alt={post.title}
-                      width={500}
-                      height={500}
+                      width={350}
+                      height={350}
                     />
                     <div className={gridStyles["grid-post-date-div"]}>
                       <RxDotFilled className={gridStyles["dot-icon"]} />
