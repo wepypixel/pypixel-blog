@@ -71,6 +71,7 @@ export default function Category({
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={`${description}`} />
+        <link rel="canonical" href={`https://pypixel.com/category/${name}`} />
       </Head>
 
       <h2 className={styles["category-posts-heading"]}>

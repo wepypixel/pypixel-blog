@@ -7,6 +7,7 @@ export default function ContactUs() {
       <Head>
         <title>Privacy Policy</title>
         <meta name="description" content="PyPixel's Privacy Policy" />
+        <link rel="canonical" href="https://pypixel.com/privacy-policy" />
       </Head>
       <div className={styles["contact-us-heading-container"]}>
         <h4 className={styles["contact-us-heading"]}>Privacy Policy</h4>

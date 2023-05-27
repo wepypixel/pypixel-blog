@@ -7,8 +7,9 @@
   bottom: 0;
 }
 
-.footer h1 {
+.footer h2 {
   margin-block-end: 0;
+  font-size: 28px;
   color: #fff;
 }
 

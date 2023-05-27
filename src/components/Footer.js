@@ -8,7 +8,7 @@ export default function Footer() {
         <div className={styles["footer-div1"]}>
           <div>
             <Link href="/">
-              <h1>PyPixel</h1>
+              <h2>PyPixel</h2>
             </Link>
             <p className={styles.footerPara}>
               PyPixel is a technology and design blog that aims to bring the

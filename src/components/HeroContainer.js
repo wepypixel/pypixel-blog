@@ -29,8 +29,9 @@ export default function HeroContainer({ posts }) {
               src={post.cover_image}
               className={styles["hero-container-post-cover-image"]}
               alt={post.title}
-              width={800}
-              height={800}
+              width={700}
+              height={700}
+              priority
             ></Image>
             <h2 className={styles["hero-container-post-title"]}>
               {post.title}

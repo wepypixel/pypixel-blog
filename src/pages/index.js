@@ -1,8 +1,11 @@
-import HeroContainer from "../components/HeroContainer";
+// import HeroContainer from "../components/HeroContainer";
 import CategoryContainer from "../components/CategoryContainer";
 import BlogPostList from "../components/BlogPostList";
 import Head from "next/head";
 import axios from "axios";
+import dynamic from "next/dynamic";
+
+const HeroContainer = dynamic(() => import("../components/HeroContainer"));
 
 export default function Homepage({
   recentPosts,
@@ -20,10 +23,15 @@ export default function Homepage({
           content="PyPixel is a technology and design blog featuring articles on AI, ML, web development, UI, UX, and design."
         />
         <meta property="og:title" content="PyPixel" />
-        <meta property="og:description" content="PyPixel is a technology and design blog featuring articles on AI, ML, web development, UI, UX, and design." />
-        <meta property="og:image" content="favicon.ico" />
+        <meta property="og:url" content="https://pypixel.com" />
+        <meta
+          property="og:description"
+          content="PyPixel is a technology and design blog featuring articles on AI, ML, web development, UI, UX, and design."
+        />
+        <meta property="og:image" content="/favicon.ico" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <link rel="canonical" href="https://pypixel.com" />
       </Head>
 
       <div>

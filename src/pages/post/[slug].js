@@ -50,6 +50,7 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
         <title>{blogPost.title}</title>
         <meta name="description" content={description} />
         <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://pypixel.com/post/${blogPost.slug}`} />
         <meta property="og:title" content={blogPost.title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={blogPost.cover_image} />
@@ -59,6 +60,7 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
         <meta name="twitter:title" content={blogPost.title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={blogPost.cover_image} />
+        <link rel="canonical" href={`https://pypixel.com/post/${blogPost.slug}`} />
       </Head>
       <div className={styles["blog-post-detail-upper-body"]}>
         <main className={styles["blog-post-detail-main"]}>

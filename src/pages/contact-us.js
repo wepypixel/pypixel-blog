@@ -12,6 +12,7 @@ export default function ContactUs() {
           name="description"
           content="Contact Pypixel, a leading blog about technology and design, including AI, ML, web development, UI/UX, and more."
         />
+        <link rel="canonical" href="https://pypixel.com/contact-us" />
       </Head>
       <div className={styles["contact-us-heading-container"]}>
         <h4 className={styles["contact-us-heading"]}>Contact Us</h4>

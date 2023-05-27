@@ -17,6 +17,7 @@ export default function AboutUs({ aboutUs }) {
           name="description"
           content="Pypixel, the intersection of technology and design. Our blog is dedicated to exploring the latest trends, and concepts in both technology and design."
         />
+        <link rel="canonical" href="https://pypixel.com/about-us" />
       </Head>
 
       <div className={styles["about-us-heading-container"]}>
@@ -41,7 +42,7 @@ export default function AboutUs({ aboutUs }) {
 }
 
 export async function getServerSideProps() {
-  const response = await axios.get("https://pypixel.com/api/about-us");
+  const response = await axios.get("api/about-us");
   const aboutUs = response.data;
 
   return {
