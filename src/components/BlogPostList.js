@@ -20,7 +20,6 @@ export default function BlogPostList({ initialPosts, currentPage, totalPages }) 
         const response = await axios.get(
           `https://pypixel.com/api/posts?page=${currentPageState}`
         );
-        console.log("Hitting")
         setPosts(response.data.results);
       } catch (error) {
         console.log(error);

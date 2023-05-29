@@ -34,7 +34,9 @@
 }
 
 .blog-post-content{
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.5;
+    word-spacing: 1px;
 }
 
 .blog-post-detail-published-date {
@@ -125,4 +127,9 @@
     object-fit: cover;
     margin: 20px 0;
   }
+  .blog-post-content{
+    font-size: 18px;
+    line-height: 1.5;
+    word-spacing: 0px;
+}
 }

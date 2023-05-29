@@ -40,7 +40,9 @@
 .contact-us-content {
   width: 60%;
   margin: 50px auto;
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 1.5;
+  word-spacing: 0px;
 }
 
 .social-icons-contact-us {
@@ -86,7 +88,7 @@
     width: 100%;
     margin-block-start: 0;
   }
-  
+
   .contact-us-content {
     width: 100%;
     font-size: 18px;
