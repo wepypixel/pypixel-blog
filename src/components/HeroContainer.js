@@ -55,6 +55,7 @@ export default function HeroContainer({ posts }) {
               alt={post.title}
               width={300}
               height={300}
+              priority
             ></Image>
             <h2 className={styles["hero-container-post-title-mobile"]}>
               
