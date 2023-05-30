@@ -14,7 +14,7 @@ export default function Document() {
         />
         <script
           async
-         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045600134360394"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045600134360394"
           crossorigin="anonymous"
         ></script>
         <Script
