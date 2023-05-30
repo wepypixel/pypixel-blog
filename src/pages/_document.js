@@ -12,16 +12,16 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <script
+          async
+         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045600134360394"
+          crossorigin="anonymous"
+        ></script>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
           strategy="afterInteractive"
           async
         />
-        <Script
-          async
-         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045600134360394"
-          crossorigin="anonymous"
-        ></Script>
         <Script strategy="afterInteractive" id="ga-script">
           {`
           window.dataLayer = window.dataLayer || [];
