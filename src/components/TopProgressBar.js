@@ -54,6 +54,9 @@ window.fetch = async function (...args) {
   }
 };
 
-export default function () {
+export default function MyLoadingIndicator() {
   return null;
 }
+
+
+MyLoadingIndicator.displayName = "MyLoadingIndicator";
