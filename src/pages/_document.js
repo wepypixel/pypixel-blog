@@ -17,7 +17,11 @@ export default function Document() {
           strategy="afterInteractive"
           async
         />
-
+        <Script
+          async
+         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045600134360394"
+          crossorigin="anonymous"
+        ></Script>
         <Script strategy="afterInteractive" id="ga-script">
           {`
           window.dataLayer = window.dataLayer || [];

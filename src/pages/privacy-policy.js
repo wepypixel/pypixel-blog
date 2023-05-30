@@ -11,11 +11,15 @@ export default function ContactUs() {
       </Head>
       <div className={styles["contact-us-heading-container"]}>
         <h4 className={styles["contact-us-heading"]}>Privacy Policy</h4>
-        <h1 className={styles["contact-us-title"]}>PyPixel&apos;s Privacy Policy</h1>
+        <h1 className={styles["contact-us-title"]}>
+          PyPixel&apos;s Privacy Policy
+        </h1>
       </div>
       <div className={styles["contact-us-content"]}>
+        <h1>Privacy Policy for PyPixel</h1>
+
         <p>
-          At PyPixel, accessible from www.pypixel.com, one of our main
+          At PyPixel, accessible from <a href="https://pypixel.com" style={{color:"blue"}}>https://pypixel.com</a>, one of our main
           priorities is the privacy of our visitors. This Privacy Policy
           document contains types of information that is collected and recorded
           by PyPixel and how we use it.
@@ -83,14 +87,27 @@ export default function ContactUs() {
         <p>
           PyPixel follows a standard procedure of using log files. These files
           log visitors when they visit websites. All hosting companies do this
-          and a part of hosting services&apos; analytics. The information
-          collected by log files include internet protocol (IP) addresses,
-          browser type, Internet Service Provider (ISP), date and time stamp,
-          referring/exit pages, and possibly the number of clicks. These are not
-          linked to any information that is personally identifiable. The purpose
-          of the information is for analyzing trends, administering the site,
-          tracking users&apos; movement on the website, and gathering
-          demographic information.
+          and a part of hosting services&apos; analytics. The information collected
+          by log files include internet protocol (IP) addresses, browser type,
+          Internet Service Provider (ISP), date and time stamp, referring/exit
+          pages, and possibly the number of clicks. These are not linked to any
+          information that is personally identifiable. The purpose of the
+          information is for analyzing trends, administering the site, tracking
+          users&apos; movement on the website, and gathering demographic information.
+        </p>
+
+        <h2>Google DoubleClick DART Cookie</h2>
+
+        <p>
+          Google is one of a third-party vendor on our site. It also uses
+          cookies, known as DART cookies, to serve ads to our site visitors
+          based upon their visit to www.website.com and other sites on the
+          internet. However, visitors may choose to decline the use of DART
+          cookies by visiting the Google ad and content network Privacy Policy
+          at the following URL 
+          <a href="https://policies.google.com/technologies/ads" style={{color: "blue"}}>
+            https://policies.google.com/technologies/ads
+          </a>
         </p>
 
         <h2>Advertising Partners Privacy Policies</h2>
@@ -104,8 +121,8 @@ export default function ContactUs() {
           Third-party ad servers or ad networks uses technologies like cookies,
           JavaScript, or Web Beacons that are used in their respective
           advertisements and links that appear on PyPixel, which are sent
-          directly to users&apos; browser. They automatically receive your IP
-          address when this occurs. These technologies are used to measure the
+          directly to users&apos; browser. They automatically receive your IP address
+          when this occurs. These technologies are used to measure the
           effectiveness of their advertising campaigns and/or to personalize the
           advertising content that you see on websites that you visit.
         </p>
@@ -148,12 +165,12 @@ export default function ContactUs() {
           that a business has collected.
         </p>
         <p>
-          Request that a business that sells a consumer&apos;s personal data,
-          not sell the consumer&apos;s personal data.
+          Request that a business that sells a consumer&apos;s personal data, not
+          sell the consumer&apos;s personal data.
         </p>
         <p>
           If you make a request, we have one month to respond to you. If you
-          would like to exercise any of these rights, please contact us.
+          would like to exercise any of these rights, please contact us on wepypixel@gmail.com
         </p>
 
         <h2>GDPR Data Protection Rights</h2>
@@ -192,7 +209,7 @@ export default function ContactUs() {
         </p>
         <p>
           If you make a request, we have one month to respond to you. If you
-          would like to exercise any of these rights, please contact us.
+          would like to exercise any of these rights, please contact us on wepypixel@gmail.com 
         </p>
 
         <h2>Children&apos;s Information</h2>
@@ -220,12 +237,11 @@ export default function ContactUs() {
           These changes are effective immediately, after they are posted on this
           page.
         </p>
-
         <h2>Contact Us</h2>
 
         <p>
           If you have any questions or suggestions about our Privacy Policy, do
-          not hesitate to contact us.
+          not hesitate to contact us on wepypixel@gmail.com
         </p>
       </div>
     </div>
