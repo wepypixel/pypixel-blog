@@ -2,6 +2,7 @@
 import CategoryContainer from "../components/CategoryContainer";
 import BlogPostList from "../components/BlogPostList";
 import Head from "next/head";
+import { useEffect } from "react";
 import axios from "axios";
 import dynamic from "next/dynamic";
 
@@ -13,7 +14,21 @@ export default function Homepage({
   posts,
   currentPage,
   totalPages,
-}) {
+}) 
+
+{
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045600134360394';
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -36,6 +51,12 @@ export default function Homepage({
 
       <div>
         <HeroContainer posts={recentPosts} />
+        <ins className="adsbygoogle"
+         style={{ display: 'block' }}
+         data-ad-client="ca-pub-8045600134360394"
+         data-ad-slot="2513454759"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
         <CategoryContainer categories={categories} />
         <BlogPostList
           initialPosts={posts}
@@ -52,6 +73,8 @@ export async function getServerSideProps() {
   const response = await axios.get(
     `https://pypixel.com/api/posts?page=${page}`
   );
+  
+
   const posts = response.data.results;
   const totalPages = response.data.total_pages;
 
