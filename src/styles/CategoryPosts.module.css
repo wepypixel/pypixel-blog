@@ -50,7 +50,7 @@
 
 .posts-grid-item{
   border-radius: 1rem;
-  box-shadow:0 0 15px rgba(186, 186, 186, 0.7);
+  border: 0.5px solid rgba(186, 186, 186, 0.7);
   transition: all 0.2s ease-in-out;
 }
 
