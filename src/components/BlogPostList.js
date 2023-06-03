@@ -44,6 +44,7 @@ export default function BlogPostList({ initialPosts, currentPage, totalPages }) 
 
   return (
     <div className={styles["posts-list-container"]}>
+      <h2 className={styles["posts-list-container-title"]}>Latest Articles</h2>
       <div className={styles["posts-grid-container"]}>
         {posts.map((post) => (
           <div key={post.id} className={styles["posts-grid-item"]}>
@@ -67,6 +68,7 @@ export default function BlogPostList({ initialPosts, currentPage, totalPages }) 
               <h2 className={styles["grid-card-post-title"]}>
               {truncateString(post.title, 70)}
               </h2>
+              <p className={styles["grid-post-meta-descr"]}>{post.meta_description}</p>
             </Link>
           </div>
         ))}

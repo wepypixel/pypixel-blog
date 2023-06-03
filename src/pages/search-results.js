@@ -50,9 +50,9 @@ export default function SearchResults({ blogPosts, query, currentPage, totalPage
         <title>{searchTitle}</title>
         <meta name="description" content="Search Results" />
       </Head>
-      <h1 className={styles["category-posts-heading"]}>
+      <h2 className={styles["category-posts-heading"]}>
         Found {count} Search Results for &quot;{query.charAt(0).toUpperCase() + query.slice(1)}&quot;
-      </h1>
+      </h2>
       <div className={styles["posts-grid-container"]}>
         {posts.map((post) => (
           <div key={post.id} className={styles["posts-grid-item"]}>
@@ -76,6 +76,7 @@ export default function SearchResults({ blogPosts, query, currentPage, totalPage
               <h2 className={styles["grid-card-post-title"]}>
                 {truncateString(post.title, 70)}
               </h2>
+              <p className={styles["grid-post-meta-descr"]}>{post.meta_description}</p>
             </Link>
           </div>
         ))}

@@ -110,7 +110,7 @@ export default function Navbar() {
             type="text"
             value={query}
             className={styles.searchBarNav}
-            placeholder="Search"
+            placeholder="Search PyPixel"
             onChange={(e) => setQuery(e.target.value)}
             required
           />

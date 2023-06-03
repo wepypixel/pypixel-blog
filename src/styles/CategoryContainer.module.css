@@ -6,7 +6,7 @@
 }
 
 .category-hero-heading {
-  font-size: 48px;
+  font-size: 32px;
   text-align: center;
   margin-block-start: 0;
   margin-bottom: 50px;
@@ -34,15 +34,16 @@
   border-radius: 20px;
   opacity: 0.8;
   object-fit: cover;
+  transition: all 0.2s ease-in;
 }
 
 .category-card:hover .category-image {
-  opacity: 0.5;
+  filter: brightness(0.7);
 }
 
 .category-card-h1 {
   color: #fff;
-  font-size: 68px;
+  font-size: 54px;
   z-index: 997;
   position: absolute;
   top: 10px;

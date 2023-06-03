@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  min-height: 45vh;
+  min-height: 40vh;
   background-color: #303030;
   padding: 40px;
   position: relative;
@@ -25,7 +25,8 @@
   color: #fff;
 }
 .footer-site-links {
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 0.6;
   color: #fff;
   cursor: pointer;
   width: fit-content;
@@ -37,7 +38,8 @@
 }
 
 .footer-social-links {
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 0.6;
   color: #fff;
   cursor: pointer;
   width: fit-content;

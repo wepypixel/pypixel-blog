@@ -105,6 +105,7 @@ export default function Category({
               <h2 className={styles["grid-card-post-title"]}>
                 {truncateString(post.title, 70)}
               </h2>
+              <p className={styles["grid-post-meta-descr"]}>{post.meta_description}</p>
             </Link>
           </div>
         ))}

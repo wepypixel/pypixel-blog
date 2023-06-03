@@ -1,7 +1,8 @@
 import axios from "axios";
 import { format } from "date-fns";
 import { useEffect } from "react";
-import { AiFillClockCircle } from "react-icons/ai";
+import { AiFillClockCircle, AiFillTwitterCircle, AiOutlineWhatsApp } from "react-icons/ai";
+import { BsTelegram, BsWhatsapp } from "react-icons/bs";
 import DOMPurify from "isomorphic-dompurify";
 import Link from "next/link";
 import Head from "next/head";
@@ -75,6 +76,12 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
               "dd MMMM yyyy"
             )}
           </h4>
+          <div>
+
+          {/* <AiFillTwitterCircle/>
+          <BsWhatsapp/>
+          <BsTelegram/> */}
+          </div>
           <Image
             src={blogPost.cover_image}
             className={styles["blog-post-detail-img"]}
@@ -89,50 +96,15 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
             className={styles["blog-post-content"]}
           ></div>
         </main>
-
-        <aside>
-          <h2>Related Posts</h2>
-          {relatedPosts.slice(0, 5).map((post) => {
-            if (post.id != blogPost.id) {
-              return (
-                <div key={post.id} className={styles["related-post-div"]}>
-                  <Link
-                    href={`/post/${post.slug}`}
-                    className={gridStyles["blog-post-hero-link"]}
-                  >
-                    <Image
-                      src={post.cover_image}
-                      className={styles["related-posts-img"]}
-                      alt={post.title}
-                      width={350}
-                      height={350}
-                    />
-                    <div className={gridStyles["grid-post-date-div"]}>
-                      <RxDotFilled className={gridStyles["dot-icon"]} />
-                      <p className={gridStyles["post-date"]}>
-                        {format(
-                          new Date(post.created_on.substring(0, 10)),
-                          "dd MMMM yyyy"
-                        )}
-                      </p>
-                    </div>
-                    <h2 className={gridStyles["grid-card-post-title"]}>
-                      - {truncateString(post.title, 70)}
-                    </h2>
-                  </Link>
-                </div>
-              );
-            }
-          })}
-        </aside>
       </div>
-
+      <hr className={styles['hr-style']}></hr>
       <section className={gridStyles["posts-list-container"]}>
+        
         <h2 className={styles["popular-posts-heading"]}>
           Popular Posts in {blogPost.category.name}
         </h2>
         <div className={gridStyles["posts-grid-container"]}>
-          {popularPosts.slice(0, 12).map((post) => {
+          {popularPosts.slice(0, 13).map((post) => {
             if (post.id != blogPost.id) {
               return (
                 <div key={post.id} className={gridStyles["posts-grid-item"]}>
@@ -157,8 +129,9 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
                       </p>
                     </div>
                     <h2 className={gridStyles["grid-card-post-title"]}>
-                      -{truncateString(post.title, 70)}
+                      {truncateString(post.title, 70)}
                     </h2>
+                    <p className={gridStyles["grid-post-meta-descr"]}>{post.meta_description}</p>
                   </Link>
                 </div>
               );
