@@ -18,6 +18,9 @@ import gridStyles from "../../styles/BlogPostList.module.css";
 import Image from "next/image";
 import * as ga from "../../lib/ga";
 import { useRouter } from "next/router";
+import hljs from 'highlight.js';
+import python from 'highlight.js/lib/languages/python';
+hljs.registerLanguage('python', python);
 
 export default function Post({ blogPost, relatedPosts, popularPosts }) {
   const description = blogPost ? blogPost.meta_description : "";
@@ -66,6 +69,10 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
   }
 
   useEffect(() => {
+    hljs.initHighlighting();
+}, []);
+
+  useEffect(() => {
     const handleRouteChange = (url) => {
       ga.pageview(url);
     };
@@ -103,6 +110,7 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
           rel="canonical"
           href={`https://pypixel.com/post/${blogPost.slug}`}
         />
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css"></link>
       </Head>
       <div className={styles["blog-post-detail-upper-body"]}>
         <main className={styles["blog-post-detail-main"]}>
