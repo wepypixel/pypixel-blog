@@ -69,8 +69,10 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
   }
 
   useEffect(() => {
+    // Reapply code highlighting when the component mounts or when the route changes
+    hljs.initHighlighting.called = false;
     hljs.initHighlighting();
-}, []);
+  }, [router.asPath]);
 
   useEffect(() => {
     const handleRouteChange = (url) => {
