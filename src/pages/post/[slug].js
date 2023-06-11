@@ -18,9 +18,9 @@ import gridStyles from "../../styles/BlogPostList.module.css";
 import Image from "next/image";
 import * as ga from "../../lib/ga";
 import { useRouter } from "next/router";
-import hljs from 'highlight.js';
-import python from 'highlight.js/lib/languages/python';
-hljs.registerLanguage('python', python);
+import hljs from "highlight.js";
+import python from "highlight.js/lib/languages/python";
+hljs.registerLanguage("python", python);
 
 export default function Post({ blogPost, relatedPosts, popularPosts }) {
   const description = blogPost ? blogPost.meta_description : "";
@@ -42,7 +42,9 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
   function shareOnFacebook() {
     // Replace "YOUR_URL" with the actual URL of your blog post
     var url = `https://pypixel.com/post/${blogPost.slug}`;
-    window.open("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url));
+    window.open(
+      "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url)
+    );
   }
   function shareOnWhatsapp() {
     // Replace "YOUR_URL" with the actual URL of your blog post
@@ -53,19 +55,34 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
     // Replace "YOUR_URL" with the actual URL of your blog post
     var url = `https://pypixel.com/post/${blogPost.slug}`;
     var title = blogPost.title;
-    window.open("https://www.linkedin.com/shareArticle?mini=true&url=" + encodeURIComponent(url) + "&title=" + encodeURIComponent(title));
+    window.open(
+      "https://www.linkedin.com/shareArticle?mini=true&url=" +
+        encodeURIComponent(url) +
+        "&title=" +
+        encodeURIComponent(title)
+    );
   }
   function shareOnTelegram() {
     // Replace "YOUR_URL" with the actual URL of your blog post
     var url = `https://pypixel.com/post/${blogPost.slug}`;
     var title = blogPost.title;
-    window.open("https://t.me/share/url?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(title));
+    window.open(
+      "https://t.me/share/url?url=" +
+        encodeURIComponent(url) +
+        "&text=" +
+        encodeURIComponent(title)
+    );
   }
   function shareOnTwitter() {
     // Replace "YOUR_URL" with the actual URL of your blog post
     var url = `https://pypixel.com/post/${blogPost.slug}`;
     var title = blogPost.title;
-    window.open("https://twitter.com/intent/tweet?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(title));
+    window.open(
+      "https://twitter.com/intent/tweet?url=" +
+        encodeURIComponent(url) +
+        "&text=" +
+        encodeURIComponent(title)
+    );
   }
 
   useEffect(() => {
@@ -112,7 +129,10 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
           rel="canonical"
           href={`https://pypixel.com/post/${blogPost.slug}`}
         />
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css"></link>
+        <link
+          rel="stylesheet"
+          href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css"
+        ></link>
       </Head>
       <div className={styles["blog-post-detail-upper-body"]}>
         <main className={styles["blog-post-detail-main"]}>
@@ -130,12 +150,27 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
               )}
             </h4>
 
-            <div className={styles['social-share-icons']} >
-              <BsFacebook className={styles['share-icon']} onClick={shareOnFacebook}/>
-              <BsTwitter className={styles['share-icon']} onClick={shareOnTwitter}/>
-              <BsWhatsapp className={styles['share-icon']} onClick={shareOnWhatsapp}/>
-              <BsTelegram className={styles['share-icon']} onClick={shareOnTelegram}/>
-              <BsLinkedin className={styles['share-icon']} onClick={shareOnLinkedin}/>
+            <div className={styles["social-share-icons"]}>
+              <BsFacebook
+                className={styles["share-icon"]}
+                onClick={shareOnFacebook}
+              />
+              <BsTwitter
+                className={styles["share-icon"]}
+                onClick={shareOnTwitter}
+              />
+              <BsWhatsapp
+                className={styles["share-icon"]}
+                onClick={shareOnWhatsapp}
+              />
+              <BsTelegram
+                className={styles["share-icon"]}
+                onClick={shareOnTelegram}
+              />
+              <BsLinkedin
+                className={styles["share-icon"]}
+                onClick={shareOnLinkedin}
+              />
             </div>
           </div>
 
@@ -147,7 +182,9 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
             height={400}
             priority
           />
-
+          {/* <!-- Ezoic - mid_content - mid_content --> */}
+          <div id="ezoic-pub-ad-placeholder-103"> </div>
+          {/* <!-- End Ezoic - mid_content - mid_content --> */}
           <div
             dangerouslySetInnerHTML={{ __html: sanitizedContent }}
             className={styles["blog-post-content"]}
