@@ -234,6 +234,9 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
           })}
         </div>
       </section>
+      {/* <!-- Ezoic - bottom_of_page - bottom_of_page --> */}
+      <div id="ezoic-pub-ad-placeholder-104"> </div>
+      {/* <!-- End Ezoic - bottom_of_page - bottom_of_page --> */}
     </div>
   );
 }
