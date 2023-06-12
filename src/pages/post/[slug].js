@@ -182,9 +182,6 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
             height={400}
             priority
           />
-          {/* <!-- Ezoic - mid_content - mid_content --> */}
-          <div id="ezoic-pub-ad-placeholder-103"> </div>
-          {/* <!-- End Ezoic - mid_content - mid_content --> */}
           <div
             dangerouslySetInnerHTML={{ __html: sanitizedContent }}
             className={styles["blog-post-content"]}
@@ -234,9 +231,6 @@ export default function Post({ blogPost, relatedPosts, popularPosts }) {
           })}
         </div>
       </section>
-      {/* <!-- Ezoic - bottom_of_page - bottom_of_page --> */}
-      <div id="ezoic-pub-ad-placeholder-104"> </div>
-      {/* <!-- End Ezoic - bottom_of_page - bottom_of_page --> */}
     </div>
   );
 }
